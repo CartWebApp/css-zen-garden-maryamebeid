@@ -1,239 +1,281 @@
-/* =================================== */
-/* CSS Zen Garden - Simple Theme       */
-/* Using all required selectors        */
-/* =================================== */
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
-  --primary-color: #2a9d8f;
-  --secondary-color: #264653;
-  --accent-color: #e76f51;
-  --bg-color: #f4f4f4;
-  --text-color: #333;
-  --max-width: 960px;
-  --padding: 1rem;
+  --main-bg-color: #f0f4f8;
+  --accent-color: #336699;
+  --text-color: #222;
+  --highlight-color: #ff6f61;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  background-color: var(--bg-color);
+body#css-zen-garden {
+  font-family: var(--font-main);
+  background-color: var(--main-bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding: var(--padding);
+  padding: 20px;
 }
 
-h1, h2, h3 {
-  color: var(--secondary-color);
-  margin-bottom: 0.5rem;
+.page-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
-p.intro {
-  font-size: 1.1rem;
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-
-.button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button.primary {
-  background-color: var(--accent-color);
-}
-
-.navbar .nav-item {
-  display: inline-block;
-  margin-right: 1rem;
-  color: var(--secondary-color);
-  text-decoration: none;
-}
-
-#main-header {
+header[role="banner"] {
   border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-article p {
-  margin-bottom: 1rem;
+header h1 {
+  font-size: 2.8rem;
+  color: var(--accent-color);
+  margin-bottom: 5px;
 }
 
-nav > ul {
-  list-style-type: none;
-  padding-left: 0;
+header h2 {
+  font-weight: normal;
+  font-style: italic;
+  color: var(--highlight-color);
 }
 
-h2 + p {
-  font-weight: bold;
+.intro {
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 220px;
 }
 
-h3 ~ p {
-  color: var(--primary-color);
+.intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-a[href] {
-  color: var(--primary-color);
+.intro p {
+  margin-bottom: 1em;
+}
+
+.intro .summary,
+.intro .preamble {
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: var(--accent-color);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+a[href^="http"] {
+  color: var(--highlight-color);
   text-decoration: none;
+  border-bottom: 1px dashed var(--highlight-color);
 }
 
-a[href="https://www.csszengarden.com/"] {
+a[href^="http"]:hover {
+  text-decoration: underline;
+}
+
+.design-name {
   font-weight: bold;
-}
-
-[class~="highlight"] {
-  background-color: #ffe066;
-}
-
-a[href|="https"] {
-  border-bottom: 1px dotted var(--accent-color);
-}
-
-a[href^="mailto:"] {
   color: var(--accent-color);
 }
 
-a[href$=".pdf"] {
+.design-name.designer-name {
+  font-weight: normal;
   font-style: italic;
+  color: #666;
 }
 
-a[href*="zen"] {
-  text-transform: uppercase;
+.design-selection nav a {
+  display: inline-block;
+  margin: 5px 10px 5px 0;
 }
 
-a:active, .button:active {
-  opacity: 0.6;
+.sidebar > .wrapper {
+  background: #e9f1f7;
+  padding: 15px;
+  border-radius: 6px;
 }
 
-.button::after {
-  content: " →";
+.summary + .preamble {
+  border-top: 2px solid var(--accent-color);
+  padding-top: 15px;
+}
+
+.intro ~ .main {
+  border-top: 3px solid var(--highlight-color);
+  padding-top: 20px;
+}
+
+a[title="View the source CSS file of the currently-viewed design."] {
   font-weight: bold;
 }
 
-h1::before {
-  content: "🌿 ";
+a[title~="CSS"] {
+  font-style: italic;
 }
 
-section.empty-section:empty {
+a[title|="View"] {
+  color: var(--accent-color);
+}
+
+a[href$=".xml"] {
+  font-weight: bold;
+  color: #555;
+}
+
+a[href*="submit"] {
+  background-color: var(--highlight-color);
+  color: white;
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+a:active {
+  color: #222;
+}
+
+h3::after {
+  content: " •";
+  color: var(--highlight-color);
+}
+
+p::before {
+  content: "✦ ";
+  color: var(--accent-color);
+}
+
+.summary:empty {
   display: none;
 }
 
-ul li:first-child {
-  font-weight: bold;
+.intro > header:first-child {
+  margin-bottom: 20px;
 }
 
 p::first-letter {
-  font-size: 2rem;
+  font-size: 1.5em;
   font-weight: bold;
-  color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
 p::first-line {
-  letter-spacing: 0.1em;
+  font-variant: small-caps;
 }
 
-article p:first-of-type {
-  text-decoration: underline;
+.intro > p:first-of-type {
+  margin-top: 10px;
 }
 
-a:focus, .button:focus {
-  outline: 3px solid var(--primary-color);
+a:focus {
+  outline: 2px solid var(--highlight-color);
   outline-offset: 2px;
 }
 
-a:hover, .button:hover {
+a:hover {
   color: var(--accent-color);
-  text-decoration: underline;
 }
 
-ul li:last-child {
+.intro > div:last-child {
+  margin-bottom: 0;
+}
+
+.intro > p:last-of-type {
   font-style: italic;
-}
-
-article p:last-of-type {
-  border-top: 1px solid var(--primary-color);
-  padding-top: 0.5rem;
 }
 
 a:link {
-  color: var(--primary-color);
-}
-
-p:not(.intro) {
-  margin-bottom: 1.5rem;
-}
-
-ul li:nth-child(odd) {
-  background-color: #e9f5f3;
-}
-
-ul li:nth-last-child(2) {
   color: var(--accent-color);
 }
 
-article p:nth-last-of-type(1) {
-  font-weight: 700;
+p:not(:last-child) {
+  margin-bottom: 12px;
 }
 
-article p:nth-of-type(2) {
-  font-style: italic;
+.intro > div:nth-child(2) {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-h2:only-of-type {
-  color: var(--accent-color);
+.intro > div:nth-last-child(1) {
+  border-bottom: 1px solid var(--accent-color);
 }
 
-nav ul:only-child {
-  text-align: center;
+
+.intro > p:nth-last-of-type(2) {
+  font-weight: 600;
+}
+
+.intro > p:nth-of-type(3) {
+  text-decoration: underline;
+}
+
+.design-selection > nav > ul > li > a:only-of-type {
+  color: var(--highlight-color);
+}
+
+.sidebar > .wrapper > .design-selection:only-child {
+  padding-bottom: 20px;
 }
 
 ::selection {
-  background-color: var(--accent-color);
+  background: var(--highlight-color);
   color: white;
 }
 
 a:visited {
-  color: #6a4c93;
+  color: #993366;
 }
 
-/* ===================== */
-/* Image placeholder area */
-/* ===================== */
-#image-placeholder {
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  margin: 2rem auto;
-  background-color: #ddd;
-  border: 2px dashed var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--secondary-color);
-  font-size: 1.5rem;
-  font-style: italic;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  color: #777;
 }
 
-replace this with an <img> inside #image-placeholder or set background-image here 
+footer a {
+  margin-right: 10px;
+  color: var(--accent-color);
+  text-decoration: none;
+}
 
-/* =================== */
-/* Layout tweaks       */
-/* =================== */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--padding);
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .page-wrapper {
+    padding: 10px;
+  }
+
+  .intro {
+    padding-left: 0;
+  }
+
+  .intro::before {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+  }
 }
