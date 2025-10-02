@@ -60,7 +60,7 @@ header h2 {
   left: 0;
   width: 200px;
   height: 200px;
-  background-image: url();
+  background-image: url(bluebg.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 10px;
