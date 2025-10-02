@@ -1,1 +1,239 @@
-/* Empty file for template. Remember to edit only this file and not the HTML file */
+/* =================================== */
+/* CSS Zen Garden - Simple Theme       */
+/* Using all required selectors        */
+/* =================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary-color: #2a9d8f;
+  --secondary-color: #264653;
+  --accent-color: #e76f51;
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --max-width: 960px;
+  --padding: 1rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: var(--padding);
+}
+
+h1, h2, h3 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+p.intro {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button.primary {
+  background-color: var(--accent-color);
+}
+
+.navbar .nav-item {
+  display: inline-block;
+  margin-right: 1rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+#main-header {
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+article p {
+  margin-bottom: 1rem;
+}
+
+nav > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+h2 + p {
+  font-weight: bold;
+}
+
+h3 ~ p {
+  color: var(--primary-color);
+}
+
+a[href] {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a[href="https://www.csszengarden.com/"] {
+  font-weight: bold;
+}
+
+[class~="highlight"] {
+  background-color: #ffe066;
+}
+
+a[href|="https"] {
+  border-bottom: 1px dotted var(--accent-color);
+}
+
+a[href^="mailto:"] {
+  color: var(--accent-color);
+}
+
+a[href$=".pdf"] {
+  font-style: italic;
+}
+
+a[href*="zen"] {
+  text-transform: uppercase;
+}
+
+a:active, .button:active {
+  opacity: 0.6;
+}
+
+.button::after {
+  content: " →";
+  font-weight: bold;
+}
+
+h1::before {
+  content: "🌿 ";
+}
+
+section.empty-section:empty {
+  display: none;
+}
+
+ul li:first-child {
+  font-weight: bold;
+}
+
+p::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+p::first-line {
+  letter-spacing: 0.1em;
+}
+
+article p:first-of-type {
+  text-decoration: underline;
+}
+
+a:focus, .button:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+a:hover, .button:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+ul li:last-child {
+  font-style: italic;
+}
+
+article p:last-of-type {
+  border-top: 1px solid var(--primary-color);
+  padding-top: 0.5rem;
+}
+
+a:link {
+  color: var(--primary-color);
+}
+
+p:not(.intro) {
+  margin-bottom: 1.5rem;
+}
+
+ul li:nth-child(odd) {
+  background-color: #e9f5f3;
+}
+
+ul li:nth-last-child(2) {
+  color: var(--accent-color);
+}
+
+article p:nth-last-of-type(1) {
+  font-weight: 700;
+}
+
+article p:nth-of-type(2) {
+  font-style: italic;
+}
+
+h2:only-of-type {
+  color: var(--accent-color);
+}
+
+nav ul:only-child {
+  text-align: center;
+}
+
+::selection {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+a:visited {
+  color: #6a4c93;
+}
+
+/* ===================== */
+/* Image placeholder area */
+/* ===================== */
+#image-placeholder {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 2rem auto;
+  background-color: #ddd;
+  border: 2px dashed var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+replace this with an <img> inside #image-placeholder or set background-image here 
+
+/* =================== */
+/* Layout tweaks       */
+/* =================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding);
+}
